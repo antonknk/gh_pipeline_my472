@@ -1,0 +1,27 @@
+---
+title: "MY472: Example Function"
+author: "LSE Candidate Number: 50149"
+date: "Autumn Term 2024"
+output: html_document
+---
+
+```{r setup}
+# Load dependencies
+library(tidyverse)
+
+# define function
+weight_by_feed = function(data){
+  result = data |> 
+    # summarise by feed type
+    summarize(weight = mean(weight, na.rm = T), .by = feed) |> 
+    # sort rows by weight 
+    arrange(weight) 
+  
+  # return result
+  return(result)
+}
+
+# use function
+weight_by_feed(chickwts)
+```
+
