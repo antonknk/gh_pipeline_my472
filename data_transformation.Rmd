@@ -28,8 +28,8 @@ weight_by_feed(chickwts)
 ```
 
 ```{r fun2}
-scale_by_feed = function(data){
-  result = data |>
+scale_by_feed = function(data_new){
+  result = data_new |>
     mutate(weight_scaled = scale(weight, center = F), .by = "feed")
 
   return(result)
