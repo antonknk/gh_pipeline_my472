@@ -8,7 +8,9 @@ output: html_document
 ```{r setup}
 # Load dependencies
 library(tidyverse)
+```
 
+```{r fun1}
 # define function
 weight_by_feed = function(data){
   result = data |> 
@@ -25,3 +27,13 @@ weight_by_feed = function(data){
 weight_by_feed(chickwts)
 ```
 
+```{r fun2}
+scale_by_feed = function(data){
+  result = data |>
+    mutate(weight_scaled = scale(weight, center = F), .by = "feed")
+
+  return(result)
+}
+
+scale_by_feed(chickwts)
+```

@@ -389,6 +389,86 @@ weight_by_feed(chickwts)</code></pre>
 ## 4  meatmeal 276.9091
 ## 5    casein 323.5833
 ## 6 sunflower 328.9167</code></pre>
+<pre class="r"><code>scale_by_feed = function(data){
+  result = data |&gt;
+    mutate(weight_scaled = scale(weight, center = F), .by = &quot;feed&quot;)
+
+  return(result)
+}
+
+scale_by_feed(chickwts)</code></pre>
+<pre><code>##    weight      feed weight_scaled
+## 1     179 horsebean     1.0333269
+## 2     160 horsebean     0.9236441
+## 3     136 horsebean     0.7850975
+## 4     227 horsebean     1.3104201
+## 5     217 horsebean     1.2526923
+## 6     168 horsebean     0.9698263
+## 7     108 horsebean     0.6234598
+## 8     124 horsebean     0.7158242
+## 9     143 horsebean     0.8255069
+## 10    140 horsebean     0.8081886
+## 11    309   linseed     1.3184164
+## 12    229   linseed     0.9770788
+## 13    181   linseed     0.7722763
+## 14    141   linseed     0.6016075
+## 15    260   linseed     1.1093471
+## 16    203   linseed     0.8661441
+## 17    148   linseed     0.6314745
+## 18    169   linseed     0.7210756
+## 19    213   linseed     0.9088113
+## 20    257   linseed     1.0965470
+## 21    244   linseed     1.0410796
+## 22    271   linseed     1.1562811
+## 23    243   soybean     0.9296210
+## 24    230   soybean     0.8798882
+## 25    248   soybean     0.9487490
+## 26    327   soybean     1.2509715
+## 27    329   soybean     1.2586227
+## 28    250   soybean     0.9564002
+## 29    193   soybean     0.7383410
+## 30    271   soybean     1.0367379
+## 31    316   soybean     1.2088899
+## 32    267   soybean     1.0214355
+## 33    199   soybean     0.7612946
+## 34    171   soybean     0.6541778
+## 35    158   soybean     0.6044450
+## 36    248   soybean     0.9487490
+## 37    423 sunflower     1.2190340
+## 38    340 sunflower     0.9798382
+## 39    392 sunflower     1.1296958
+## 40    339 sunflower     0.9769563
+## 41    341 sunflower     0.9827201
+## 42    226 sunflower     0.6513042
+## 43    320 sunflower     0.9222006
+## 44    295 sunflower     0.8501537
+## 45    334 sunflower     0.9625469
+## 46    322 sunflower     0.9279644
+## 47    297 sunflower     0.8559175
+## 48    318 sunflower     0.9164369
+## 49    325  meatmeal     1.0921140
+## 50    257  meatmeal     0.8636102
+## 51    303  meatmeal     1.0181863
+## 52    315  meatmeal     1.0585105
+## 53    380  meatmeal     1.2769333
+## 54    153  meatmeal     0.5141337
+## 55    263  meatmeal     0.8837723
+## 56    242  meatmeal     0.8132049
+## 57    206  meatmeal     0.6922323
+## 58    344  meatmeal     1.1559607
+## 59    258  meatmeal     0.8669705
+## 60    368    casein     1.0695838
+## 61    390    casein     1.1335263
+## 62    379    casein     1.1015551
+## 63    260    casein     0.7556842
+## 64    404    casein     1.1742170
+## 65    318    casein     0.9242599
+## 66    352    casein     1.0230802
+## 67    359    casein     1.0434255
+## 68    216    casein     0.6277992
+## 69    222    casein     0.6452381
+## 70    283    casein     0.8225332
+## 71    332    casein     0.9649506</code></pre>
 
 
 
