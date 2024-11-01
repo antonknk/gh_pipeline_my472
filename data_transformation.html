@@ -389,8 +389,8 @@ weight_by_feed(chickwts)</code></pre>
 ## 4  meatmeal 276.9091
 ## 5    casein 323.5833
 ## 6 sunflower 328.9167</code></pre>
-<pre class="r"><code>scale_by_feed = function(data){
-  result = data |&gt;
+<pre class="r"><code>scale_by_feed = function(data_new){
+  result = data_new |&gt;
     mutate(weight_scaled = scale(weight, center = F), .by = &quot;feed&quot;)
 
   return(result)
